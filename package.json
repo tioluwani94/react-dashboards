@@ -1,0 +1,29 @@
+{
+  "name": "react-dashboards",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "react-scripts start",
+    "build-examples": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook",
+    "build": "rimraf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__"
+  },
+  "devDependencies": {
+    "@emotion/core": "^10.0.9",
+    "@emotion/styled": "^10.0.9",
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^7.0.2",
+    "emotion-theming": "^10.0.9",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^2.1.8",
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.0",
+    "@storybook/react": "^5.0.3",
+    "babel-loader": "^8.0.5"
+  }
+}
