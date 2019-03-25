@@ -22,7 +22,7 @@ DashboardStories.add('Sidebar Paystack', () => (
         <p>Paystack</p>
       </Sidebar.Header>
       <Sidebar.Menu>
-        <Sidebar.MenuLink href="https://www.google.com" icon="face">hello</Sidebar.MenuLink>
+        <Sidebar.MenuLink href="https://www.google.com" icon="language">Get Started</Sidebar.MenuLink>
         <Sidebar.MenuLink href="/">world</Sidebar.MenuLink>
       </Sidebar.Menu>
     </Sidebar>
