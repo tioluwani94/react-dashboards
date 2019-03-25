@@ -1,2 +1,3 @@
-import TextInput from "./TextInput";
-export { TextInput };
+
+import Sidebar from "./Sidebar";
+export { Sidebar };
