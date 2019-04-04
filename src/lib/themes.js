@@ -1,9 +1,66 @@
+import { isAbsolute } from "path";
+
 export const components = {
   sidebar: {
-    height: '100vh',
-    position: 'fixed',
-    transition: 'all .3s',
-    zIndex: 100,
+    container: {
+      height: '100vh',
+      position: 'fixed',
+      transition: 'all .3s',
+      zIndex: 100,
+    },
+    collapsedMenuGroup: {
+      toggleCollapseLink: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        '& span': {
+          display: 'flex',
+          alignItems: 'center',
+        },
+        '& span:last-of-type': {
+          '& .material-icons': {
+            marginRight: 0,
+          },
+        },
+      },
+      menu: {
+        listStyleType: 'none',
+      },
+      menuCollapsed: {
+        position: 'absolute',
+        width: '180px',
+        zIndex: 10,
+      }
+    },
+    footer: {
+      position: 'relative',
+      zIndex: 10,
+      bottom: '10px',
+    },
+    collapseButton: {
+      position: 'absolute',
+      right: '-25px',
+      top: '50%',
+      marginTop: '-25px',
+      cursor: 'pointer',
+      padding: '15px',
+      '&::before': {
+        display: 'flex',
+        content: '""',
+        width: '2px',
+        height: '10px',
+        backgroundColor: 'rgb(150, 196, 255)',
+        transition: 'transform 0.3s ease 0s',
+      },
+      '&::after': {
+        display: 'flex',
+        content: '""',
+        width: '2px',
+        height: '10px',
+        backgroundColor: 'rgb(150, 196, 255)',
+        transition: 'transform 0.3s ease 0s',
+      },
+    }
   },
 };
 
@@ -13,7 +70,15 @@ export const themes = {
       container: {
         backgroundColor: '#011b33',
         width: '215px',
-        ...components.sidebar,
+        ...components.sidebar.container,
+      },
+      containerCollapsed: {
+        backgroundColor: '#011b33',
+        width: '60px',
+        ...components.sidebar.container,
+      },
+      content: {
+        height: 'calc(100% - 60px)',
       },
       header: {
         container: {
@@ -64,6 +129,33 @@ export const themes = {
           },
         },
       },
+      collapsedMenuGroup: {
+        ...components.sidebar.collapsedMenuGroup,
+        menuCollapsed: {
+          ...components.sidebar.collapsedMenuGroup.menuCollapsed,
+          backgroundColor: '#011b33'
+        }
+      },
+      menuGroup: {
+        ...components.sidebar.menuGroup,
+        heading: {
+          margin: '15px 0 5px',
+          padding: '0 20px',
+          color: '#62798f',
+          fontSize: '12px',
+          fontWeight: 700,
+          textTransform: 'uppercase',
+        },
+      },
+      footer: {
+        ...components.sidebar.footer,
+        transform: 'translateY(100%)',
+        padding: '0 20px 20px',
+        color: '#ffffff',
+      },
+      collapseButton: {
+        ...components.sidebar.collapseButton
+      }
     },
     header: {
       position: 'relative',
